@@ -10,7 +10,20 @@ provider "aws" {
   }
 }
 
+resource "random_id" "ami_simulation" {
+  byte_length = 2
+}
+
 resource "aws_instance" "demo" {
-  ami           = "ami-12345678"
+  ami           = "ami-${random_id.ami_simulation.hex}"
   instance_type = "t2.micro"
+
+  tags = {
+    Name = "demo"
+    ImageID = "ami-${random_id.ami_simulation.hex}"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
