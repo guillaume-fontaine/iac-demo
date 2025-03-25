@@ -14,3 +14,11 @@ resource "aws_instance" "demo" {
   ami           = "ami-12345678"
   instance_type = "t2.micro"
 }
+
+tags = {
+   Name = "demo-${random_id.suffix.hex}"
+}
+
+lifecycle {
+    create_before_destroy = true
+}
