@@ -6,7 +6,7 @@ provider "aws" {
   skip_metadata_api_check     = true
   skip_credentials_validation = true
   endpoints {
-    ec2 = "http://ip10-0-3-4-cvmjg9434iqh49gh8510-4566.direct.lab-boris.fr"
+    ec2 = "http://ip10-0-3-5-cvmjg9434iqh49gh8510-4566.direct.lab-boris.fr"
   }
 }
 
