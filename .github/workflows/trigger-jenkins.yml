@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Trigger Jenkins build
         run: |
-          curl -X POST http://ip10-0-11-4-cvmijnr6221h46l2ts50-8080.direct.lab-boris.fr/job/iac-pipeline/build --user "trollgun:http://ip10-0-11-4-cvmijnr6221h46l2ts50-8080.direct.lab-boris.fr/user/trollgun/account/" 
+          curl -X POST http://ip10-0-3-4-cvmjg9434iqh49gh8510-8080.direct.lab-boris.fr/job/iac-pipeline/build --user "trollgun:11c0be9a674e184c486006a562c06752c8" 
