@@ -10,8 +10,14 @@ provider "aws" {
   }
 }
 
+# Ressource pour créer une nouvelle AMI à partir d'une instance existante
+resource "aws_ami_from_instance" "example" {
+  name               = "terraform-example-${timestamp()}"
+  source_instance_id = "i-0123456789abcdef0"  # Remplacez par l'ID de votre instance source
+}
+
 resource "aws_instance" "demo" {
-  ami           = "ami-12345678"
+  ami           = aws_ami_from_instance.example.id
   instance_type = "t2.micro"
 }
 
