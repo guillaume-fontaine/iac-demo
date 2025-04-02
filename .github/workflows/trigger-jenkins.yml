@@ -9,5 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Jenkins build
+        env: 
+          JENKINS_USER: ${{ secrets.JENKINS_USER }}
+          JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
+          JENKINS_URL: ${{ secrets.JENKINS_URL }}
         run: |
-          curl -X POST http://ip10-0-3-4-cvmjg9434iqh49gh8510-8080.direct.lab-boris.fr/job/iac-pipeline/build --user "trollgun:11c0be9a674e184c486006a562c06752c8" 
+          curl -X POST http://ip10-0-3-4-cvmjg9434iqh49gh8510-8080.direct.lab-boris.fr/job/iac-pipeline/build --user "$JENKINS_USER:$JENKINS_API_TOKEN" 
